@@ -1,24 +1,34 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project provides trade off about creating a gem rewriting micro resources or relying on rails engine functionalities.
 
-Things you may want to cover:
+The [blog engine](https://github.com/Pauloparakleto/blorgh) provides minimal article blog functionality to the main application.
 
-* Ruby version
+Let us think about each functionality as mirroring the indicators. E.g. If an indicator is bigger, it is a strong candidate for isolation in its own engine.
 
-* System dependencies
+Each calculator can be its own engine. It also isolates the tests for each resource in order to deal with huge number of indicators.
 
-* Configuration
+Additionally, there is no need to extract templates inside the main application as they can be part of the gem in the engine's layout folder.
 
-* Database creation
+1. Install dependencies:
 
-* Database initialization
+```
+bundle
+```
 
-* How to run the test suite
+2. Extract the sample migration from engine:
+```
+rails blorgh:install:migrations
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+3. Run the migrations
+```
+rails db:migrate
+```
 
-* Deployment instructions
+4. Start the server
+```
+rails server
+```
 
-* ...
+5. Go to mounted engine at `http://localhost:3000/blog/articles`
