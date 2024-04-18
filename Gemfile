@@ -3,7 +3,7 @@ source "https://rubygems.org"
 ruby "3.2.2"
 
 # engine to test
-gem 'blorgh', path: '../blorgh'
+gem 'blorgh', git: 'git@github.com:Pauloparakleto/blorgh.git'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.3", ">= 7.1.3.2"
